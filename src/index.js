@@ -26,10 +26,6 @@ const fetchPosts = subReddit =>
 const useFetchPosts = () => {
   const [posts, setPosts] = useState([])
 
-  const resetPosts = () => {
-    setPosts([])
-  }
-
   useEffect(() => {
     if (posts.length) {
       return
@@ -56,6 +52,10 @@ const useFetchPosts = () => {
       }))
     })
   })
+
+  const resetPosts = () => {
+    setPosts([])
+  }
 
   return [posts, resetPosts]
 }
